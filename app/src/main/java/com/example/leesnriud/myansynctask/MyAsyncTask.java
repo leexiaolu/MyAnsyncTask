@@ -20,7 +20,6 @@ public class MyAsyncTask extends AsyncTask<Integer,Integer,String> {
         this.pgbar = pgbar;
     }
 
-
     //该方法不运行在UI线程中,主要用于异步操作,通过调用publishProgress()方法
     //触发onProgressUpdate对UI进行操作
     @Override
@@ -44,8 +43,6 @@ public class MyAsyncTask extends AsyncTask<Integer,Integer,String> {
 
     //在doBackground方法中,每次调用publishProgress方法都会触发该方法
     //运行在UI线程中,可对UI控件进行操作
-
-
     @Override
     protected void onProgressUpdate(Integer... values) {
         int value = values[0];
